@@ -5,3 +5,4 @@ package osram display into library
 create BOM
 recreate all current progress on a fresh install, create installation script
 testing scripts
+pidof each pd session, taskset -p 0x00000001 $PID for each core, aka 01, 02, 04, 08 etc
