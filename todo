@@ -1,0 +1,7 @@
+# 4/6/16
+average analog input, too spammy on serial port
+comments in everything
+package osram display into library
+create BOM
+recreate all current progress on a fresh install, create installation script
+testing scripts
