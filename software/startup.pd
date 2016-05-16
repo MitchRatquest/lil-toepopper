@@ -1,0 +1,3 @@
+pd -rt -verbose -audioindev 5 -audiooutdev 5 -inchannels 1 -outchannels 2 -audiobuf 15 -blocksize 256 -alsa -lib moocow -lib mrpeach -lib mapping -lib zexy UnpackOSC.pd freeverb.pd
+
+
