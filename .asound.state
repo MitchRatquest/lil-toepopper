@@ -1,0 +1,158 @@
+state.audiocodec {
+	control.1 {
+		iface MIXER
+		name 'MIC1_G boost stage output mixer control'
+		value 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'MIC2_G boost stage output mixer control'
+		value 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'LINEIN_G boost stage output mixer control'
+		value 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'MIC1 boost AMP gain control'
+		value 4
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'MIC2 boost AMP gain control'
+		value 4
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'Lineout volume control'
+		value 31
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 31'
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'ADC input gain ctrl'
+		value 3
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 7'
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'Audio linein in'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'Audio lineout'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'Audio adda drc'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'Audio adda loop'
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'audio capture mode'
+		value 'main mic'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'main mic'
+			item.1 mic1_2
+			item.2 linein
+		}
+	}
+}
+state.sndhdmi {
+	control.1 {
+		iface MIXER
+		name 'hdmi audio format Function'
+		value pcm
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 null
+			item.1 pcm
+			item.2 AC3
+			item.3 MPEG1
+			item.4 MP3
+			item.5 MPEG2
+			item.6 AAC
+			item.7 DTS
+			item.8 ATRAC
+			item.9 ONE_BIT_AUDIO
+			item.10 DOLBY_DIGITAL_PLUS
+			item.11 DTS_HD
+			item.12 MAT
+			item.13 WMAPRO
+		}
+	}
+}
