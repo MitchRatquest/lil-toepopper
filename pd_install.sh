@@ -9,6 +9,8 @@ sudo apt-get -y install libasound2 alsa-utils mplayer software-properties-common
 sudo apt-get -y build-dep puredata 
 sudo ln -s /usr/bin/wish8.6 /usr/bin/wish
 
+sudo alsactl --file .asound.state restore
+
 cd pd-0.46-7
 ./autogen.sh
 ./configure --disable-portaudio --disable-portmidi --no-recursion
@@ -32,17 +34,20 @@ sudo adduser $USER audio
 if [ -n "$( grep "X11Forwarding no" /etc/ssh/sshd_config )" ]; then
     sed -i "s/X11Forwarding no/X11Forwarding yes/g" /etc/ssh/sshd_config
 fi
-export DISPLAY=localhost:10.0
+
+#su -u $USER export DISPLAY=localhost:10.0
+
 
 #now grab a test file for DAC
 #should be a sine wave
 cd ~
 wget http://log.liminastudio.com/wp-content/uploads/2012/06/testPatch.pd_.zip
 unzip testPatch.pd_.zip
+rm testPatch.pd_.zip
 pd -rt -nogui -noadc -alsa testPatch.pd
 
 #if that doesn't output a sine wave
-alsamixer
+#alsamixer
 #and make sure you have the correct alsa device selected and press 'm' to unmute it
 #save the settings with 
-sudo alsactl store
+#sudo alsactl store
