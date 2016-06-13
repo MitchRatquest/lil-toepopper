@@ -9,3 +9,4 @@ unzip externalsARMV7.zip -d .
 rm externalsARMV7.zip
 rm ips
 echo "congrats, you got the externals"
+##combine this with the script to generate the declcareALL.pd sketch to correctly name all the stdpath startup options
