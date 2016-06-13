@@ -10,7 +10,7 @@ sudo apt-get -y build-dep puredata
 sudo ln -s /usr/bin/wish8.6 /usr/bin/wish
 
 sudo alsactl --file .asound.state restore
-
+sudo alsactl store #now save that state to your default alsactl path
 cd pd-0.46-7
 ./autogen.sh
 ./configure --disable-portaudio --disable-portmidi --no-recursion
