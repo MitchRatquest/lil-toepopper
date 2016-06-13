@@ -10,3 +10,5 @@ Its helpful to have either xming and putty set up for X11 forwarding on Windows 
 Putty's settings are Connection>SSH>X11: Enable X11, X display location localhost:0, and MIT-Magic-Cookie-1.
 
 Still a work in progress. 
+
+To install, run pd_install.sh, then run get_externals.sh, and finally load your pd sketch with declareALL.pd to have the libraries working correctly. 
