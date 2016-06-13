@@ -5,6 +5,7 @@ mkdir externals && cd externals
 wget -O temphtml  https://twitter.com/$1  &&  grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' temphtml > ips && rm temphtml
 read -r ipaddress < ips
 wget -m ftp://$2:$3@$ipaddress/share/pd/*
-#mv * ~/externals #THIS LINE DOESN"T WORK
+#mv * ~/externals #THIS LINE DOESN"T WORK\
+mv $ipaddress/share/pd/* .
 rm ips
-echo "now move these files to the correct directory under ~/pd-externals"
+#echo "now move these files to the correct directory under ~/pd-externals"
