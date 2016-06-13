@@ -1,0 +1,15 @@
+#N canvas 2750 253 873 300 10;
+#X declare -stdpath /home/orangepi/externals/moocow;
+#X declare -stdpath /home/orangepi/externals/mrpeach;
+#X obj 39 59 unpackOSC;
+#X obj 40 86 slipdec;
+#X obj 389 52 string2any > 128;
+#X obj 374 29 declare -stdpath /home/orangepi/externals/moocow;
+#X obj 405 113 readdir;
+#X obj 398 86 any2bytes 128 <;
+#X obj 14 27 declare -stdpath /home/orangepi/externals/mrpeach;
+#X obj 593 221 pan/gpan~;
+#X text 574 174 CAN ALSO DECLARE AS THIS;
+#X obj 591 198 mrpeach/cd4000;
+#X text 127 78 ALLOW THESE TO LOAD NATIVELY;
+#X text 555 60 ALLOWS THESE TO LOAD NATIVELY;
