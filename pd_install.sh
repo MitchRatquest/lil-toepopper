@@ -1,23 +1,23 @@
 #!/bin/sh
-#should make a variable for PD versioning
-#comment out for your version (should do a uname -p capture thing)
-PROCESSOR="$( uname -m)"  #x86_64, armv7l, armv6l
+
+PROCESSOR="$( uname -m)"  #x86_64, armv7l, armv6l checks machine (-p didnt work on my x86)
 
 case $PROCESSOR in
     x86_64) VERSION=pd-0.46-7.src.tar.gz   # x86 and amd64
-        STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
+        #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
     armv6l) VERSION=pd-0.46-7.armv6.tar.gz # raspi
-        STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
+        #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
     armv7l) VERSION=pd-0.46-7.armv7.tar.gz # orangepi H3 boards
-        STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
+        #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
 esac
 
 wget http://msp.ucsd.edu/Software/$VERSION
-gzip -d $VERSION
-tar -xvf $STRIPPED
+gzip -d < $VERSION | tar xvf -  # one fell swoop
+#gzip -d $VERSION
+#tar -xvf $STRIPPED 
 
 sudo apt-get update 
 sudo apt-get -y install libasound2 alsa-utils mplayer software-properties-common git autoconf libtool make  build-essential gettext portaudio19-dev  jack libasound-dev qjackctl jackd2 tcl8.6 tk8.6 unzip xauth
