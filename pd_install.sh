@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PROCESSOR="$( uname -m)"  #x86_64, armv7l, armv6l checks machine (-p didnt work on my x86)
 
