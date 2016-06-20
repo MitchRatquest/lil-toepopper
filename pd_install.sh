@@ -12,6 +12,8 @@ case $PROCESSOR in
     armv7l) VERSION=pd-0.46-7.armv7.tar.gz # orangepi H3 boards
         #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
+    i686) VERSION=pd-0.46-7.src.tar.gz  # i686 for older PAE
+        ;;
 esac
 
 wget http://msp.ucsd.edu/Software/$VERSION
