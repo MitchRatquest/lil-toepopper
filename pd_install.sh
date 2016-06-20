@@ -3,7 +3,7 @@
 PROCESSOR="$( uname -m)"  #x86_64, armv7l, armv6l checks machine (-p didnt work on my x86)
 
 case $PROCESSOR in
-    x86_64) VERSION=pd-0.46-7.src.tar.gz   # x86 and amd64
+    x86_64 | i686) VERSION=pd-0.46-7.src.tar.gz   # x86 and amd64 and i686
         #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
     armv6l) VERSION=pd-0.46-7.armv6.tar.gz # raspi
@@ -12,7 +12,7 @@ case $PROCESSOR in
     armv7l) VERSION=pd-0.46-7.armv7.tar.gz # orangepi H3 boards
         #STRIPPED="$(sed 's/.gz//' <<< "$VERSION" )"
         ;;
-    i686) VERSION=pd-0.46-7.src.tar.gz  # i686 for older PAE
+    *) VERSION=pd-0.46-7.src.tar.gz  # anything else
         ;;
 esac
 
