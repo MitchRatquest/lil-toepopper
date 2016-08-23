@@ -22,7 +22,7 @@ gzip -d < $VERSION | tar xvf -  # one fell swoop
 #tar -xvf $STRIPPED 
 
 sudo apt-get update 
-sudo apt-get -y install libasound2 alsa-utils mplayer software-properties-common git autoconf libtool make  build-essential gettext portaudio19-dev  jack libasound-dev qjackctl jackd2 tcl8.6 tk8.6 unzip xauth
+sudo apt-get -y install libasound2 alsa-utils mplayer software-properties-common git autoconf libtool make  build-essential gettext portaudio19-dev  libasound-dev  tcl8.6 tk8.6 unzip xauth
 sudo apt-get -y build-dep puredata 
 sudo ln -s /usr/bin/wish8.6 /usr/bin/wish
 
@@ -31,7 +31,7 @@ sudo alsactl store #now save that state to your default alsactl path
 cd pd-0.46-7
 ./autogen.sh
 ./configure --disable-portaudio --disable-portmidi --no-recursion
-make
+make -j 4
 sudo make install
 #autoconf
 #make clean
